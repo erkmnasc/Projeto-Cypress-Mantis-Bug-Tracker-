@@ -1,0 +1,24 @@
+{
+  "name": "projeto-cypress-mantisbt",
+  "version": "1.0.0",
+  "description": "Repositório do projeto para o processo seletivo da Mantis",
+  "main": "src/index.html",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Testing",
+    "Cypress.io"
+  ],
+  "author": "Erick Nascimento <erick_mendes@live.com>",
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "cypress": "^13.13.0"
+  }
+}
