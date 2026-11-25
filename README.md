@@ -1,15 +1,37 @@
-# Projeto Cypress Mantis Bug Tracker
+# Projeto Cypress — Mantis Bug Tracker
 
-👋 Seja bem-vindo(a)!
+[![End-to-end tests](https://github.com/erkmnasc/Projeto-Cypress-Mantis-Bug-Tracker-/actions/workflows/ci.yml/badge.svg)](https://github.com/erkmnasc/Projeto-Cypress-Mantis-Bug-Tracker-/actions/workflows/ci.yml)
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai adorar este projeto.
+Testes E2E com Cypress e JavaScript no MantisBT (ambiente de prova da Base2),
+feitos para um processo seletivo. Projeto pessoal.
 
-## Para rodar os testes em modo headless
+## O que é testado
 
-- No terminal digite: npm test.
+- **Login:** título da aplicação, login com sucesso, nome vazio, senha vazia e
+  recuperação de senha.
+- **Logout.**
+- **Criação de tarefa.**
 
-## Para rodar os testes em modo headless
+Os comandos reutilizáveis ficam em `cypress/support/commands.js`.
 
-- No terminal digite: npm run cy:open e escolha o navegador Google Chrome ou Electron.
-- Clique em Start E2E Testing in Chrome.
-- Na aba Spec, clque no teste que você deseja rodar e veja-o executando no navegador.
+## CI
+
+O workflow `.github/workflows/ci.yml` roda a suíte no GitHub Actions a cada
+push na `main`, em pull requests e sob demanda. Em caso de falha, os
+screenshots ficam salvos como artefato da execução.
+
+## Como rodar
+
+Pré-requisito: Node.js e npm.
+
+```bash
+npm install
+npm test          # modo headless
+npm run cy:open   # modo interativo
+```
+
+## Observação
+
+Três cenários de recuperação de senha (e-mail inválido, não registrado e
+vazio) estão comentados em `login.cy.js`: a aplicação lança uma exceção não
+tratada nesses fluxos.

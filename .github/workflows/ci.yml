@@ -1,14 +1,28 @@
 name: End-to-end tests
-on: [push]
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
 jobs:
   cypress-run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
+      # Instala as dependências (com cache) e roda todos os testes Cypress
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
+
+      - name: Screenshots das falhas
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
