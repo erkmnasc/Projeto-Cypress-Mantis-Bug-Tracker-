@@ -17,3 +17,11 @@
 import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// O MantisBT de prova lança um SyntaxError no próprio JavaScript da página.
+// O erro é da aplicação, não do teste: ignorado em todos os cenários.
+Cypress.on('uncaught:exception', (err) => {
+  if (err.name === 'SyntaxError') {
+    return false
+  }
+})

@@ -16,8 +16,6 @@ jobs:
       # Instala as dependências (com cache) e roda todos os testes Cypress
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
 
       - name: Screenshots das falhas
         if: failure()

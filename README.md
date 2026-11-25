@@ -30,8 +30,11 @@ npm test          # modo headless
 npm run cy:open   # modo interativo
 ```
 
-## Observação
+## Observações
 
-Três cenários de recuperação de senha (e-mail inválido, não registrado e
-vazio) estão comentados em `login.cy.js`: a aplicação lança uma exceção não
-tratada nesses fluxos.
+- O MantisBT de prova lança um `SyntaxError` no JavaScript da própria página.
+  Como o erro é da aplicação, `cypress/support/e2e.js` o ignora em todos os
+  cenários; qualquer outro erro continua falhando o teste.
+- Três cenários de recuperação de senha (e-mail inválido, não registrado e
+  vazio) estão comentados em `login.cy.js`: a aplicação lança uma exceção não
+  tratada nesses fluxos.

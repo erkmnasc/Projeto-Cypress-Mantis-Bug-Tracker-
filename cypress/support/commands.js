@@ -1,7 +1,3 @@
-Cypress.once('uncaught:exception', (err, runnable) => {
-    return false;
-})
-
 Cypress.Commands.add('homePage', function() {
     cy.visit('/')
     })
@@ -11,7 +7,6 @@ Cypress.Commands.add('realizandoLoginNaAplicacaoComSucesso', function() {
     cy.get('input[type="submit"][class="width-40 pull-right btn btn-success btn-inverse bigger-110"]').click()
     cy.get('#password').type('teste@teste24')
     cy.get('input[type="checkbox"]').should('have.length', 2)
-    cy.once
     cy.get('input[type="checkbox"][name="perm_login"]').should('not.be.checked')
     cy.get('input[type="submit"][class="width-40 pull-right btn btn-success btn-inverse bigger-110"]').click()
 })

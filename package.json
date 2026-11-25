@@ -19,6 +19,6 @@
   "license": "MIT",
   "homepage": "",
   "devDependencies": {
-    "cypress": "^13.13.0"
+    "cypress": "^15.21.2"
   }
 }

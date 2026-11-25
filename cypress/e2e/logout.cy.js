@@ -12,8 +12,9 @@ describe('Realiza logout na página inicial', function() {
         cy.title().should('be.equal', 'My View - MantisBT')
     })
 
-    it.only('clica no botão sair', function() {
-        cy.get('.fa-angle-down').click()
-        cy.get('.user-menu > :nth-child(4) > a').click()
+    it('clica no botão sair', function() {
+        cy.contains('a.dropdown-toggle', 'Erick_Nascimento', { timeout: 15000 }).click()
+        cy.get('a[href*="logout_page.php"]').should('be.visible').click()
+        cy.url().should('include', 'login_page.php')
     })
 })
