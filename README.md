@@ -1,4 +1,4 @@
-# Projeto Cypress — Mantis Bug Tracker
+# Projeto Cypress: Mantis Bug Tracker
 
 [![End-to-end tests](https://github.com/erkmnasc/Projeto-Cypress-Mantis-Bug-Tracker-/actions/workflows/ci.yml/badge.svg)](https://github.com/erkmnasc/Projeto-Cypress-Mantis-Bug-Tracker-/actions/workflows/ci.yml)
 
