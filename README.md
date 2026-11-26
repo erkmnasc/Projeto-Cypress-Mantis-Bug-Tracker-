@@ -21,7 +21,7 @@ Os comandos reutilizáveis ficam em `cypress/support/commands.js`.
 ## CI
 
 O workflow `.github/workflows/ci.yml` roda a suíte no GitHub Actions a cada
-push na `main`, em pull requests e sob demanda. Em caso de falha, os
+push na `main`, em pull requests, sob demanda e toda segunda-feira. Em caso de falha, os
 screenshots ficam salvos como artefato da execução.
 
 ## Como rodar
