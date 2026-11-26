@@ -25,22 +25,17 @@ describe('Realiza login na página inicial', function() {
     it('Solicitação de recuperação de senha com sucesso', function() {
         cy.SolicitandoRecuperacaoDeSenhaComSucesso()
     })
-    //Desativei esses 3 cenários de Recuperação de E-mail pois está com erro de (uncaught exception)
-    //Fiz a tratativa usando o código:
-    // Cypress.once('uncaught:exception', (err, runnable) => {
-    //     return false;
-    //   })
-    //Mas ao rodar a suite de teste o erro persiste.
-    
-    // it('Solicitação de recuperação de senha com e-mail e caracteres inválidos', function() {
-    //     cy.SolicitandoRecuperacaoDeSenhaComEmailComCaracteresInvalidos()
-    // })
+    // A tela de erro do Mantis lança "List is not defined" no próprio JavaScript.
+    // O handler em cypress/support/e2e.js ignora só essa mensagem.
+    it('Solicitação de recuperação de senha com e-mail e caracteres inválidos', function() {
+        cy.SolicitandoRecuperacaoDeSenhaComEmailComCaracteresInvalidos()
+    })
 
-    // it('Solicitação de recuperação de senha com e-mail não registrado', function() {
-    //     cy.SolicitandoRecuperacaoDeSenhaComEmaiNaoRegistrado()
-    // })
+    it('Solicitação de recuperação de senha com e-mail não registrado', function() {
+        cy.SolicitandoRecuperacaoDeSenhaComEmaiNaoRegistrado()
+    })
 
-    // it('Solicitação de recuperação de senha com e-mail vazio', function() {
-    //     cy.SolicitandoRecuperacaoDeSenhaComEmaiVazio()
-    // })
+    it('Solicitação de recuperação de senha com e-mail vazio', function() {
+        cy.SolicitandoRecuperacaoDeSenhaComEmaiVazio()
+    })
   })

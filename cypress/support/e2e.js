@@ -18,10 +18,15 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// O MantisBT de prova lança um SyntaxError no próprio JavaScript da página.
-// O erro é da aplicação, não do teste: ignorado em todos os cenários.
+// O MantisBT de prova tem dois erros conhecidos no próprio JavaScript:
+// um SyntaxError ao carregar as páginas e um ReferenceError ("List is not
+// defined") na tela de erro da recuperação de senha. São erros da aplicação,
+// não do teste, e só eles são ignorados; qualquer outro continua falhando.
 Cypress.on('uncaught:exception', (err) => {
   if (err.name === 'SyntaxError') {
+    return false
+  }
+  if (err.name === 'ReferenceError' && err.message.includes('List is not defined')) {
     return false
   }
 })
